@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component }  from '@angular/core';
+import { QuestionService } from '../../services/question.service';
 
 @Component({
   selector: 'app-umfrage',
   templateUrl: './umfrage.component.html',
-  styleUrls: ['./umfrage.component.scss']
+  styleUrls: ['./umfrage.component.scss'],
+  providers:  [QuestionService]
 })
-export class UmfrageComponent implements OnInit {
+export class UmfrageComponent {
+  questions: any[];
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(service: QuestionService) {
+    this.questions = service.getQuestions();
   }
-
 }
