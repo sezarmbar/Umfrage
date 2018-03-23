@@ -7,11 +7,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { ApppMaterialModule } from './material/app-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
 import { DynamicFormQuestionComponent } from './components/dynamic-form-question.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
+import { QuestionControlService } from './services/question-control.service';
 import { UmfrageComponent } from './pages/umfrage/umfrage.component';
-import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.com
     ApppMaterialModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [QuestionControlService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
