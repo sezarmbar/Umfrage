@@ -12,6 +12,7 @@ import { DynamicFormQuestionComponent } from './components/dynamic-form-question
 import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
 import { QuestionControlService } from './services/question-control.service';
+import { QuestionService } from './services/question.service';
 import { UmfrageComponent } from './pages/umfrage/umfrage.component';
 
 @NgModule({
@@ -29,7 +30,7 @@ import { UmfrageComponent } from './pages/umfrage/umfrage.component';
     ApppMaterialModule,
     AppRoutingModule
   ],
-  providers: [QuestionControlService],
+  providers: [QuestionControlService, QuestionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
