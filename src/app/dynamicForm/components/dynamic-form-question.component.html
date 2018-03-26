@@ -1,16 +1,37 @@
 <div [formGroup]="form">
-  <label [attr.for]="question.key">{{question.label}}</label>
+  <!-- <label [attr.for]="question.key">{{question.label}}</label> -->
 
   <div [ngSwitch]="question.controlType">
 
-    <input *ngSwitchCase="'textbox'" [formControlName]="question.key"
-            [id]="question.key" [type]="question.type">
+    <!-- textbox -->
+    <mat-form-field *ngSwitchCase="'textbox'">
+      <textarea matInput class="um-full-width" placeholder="{{question.label}}" [type]="question.type" [formControlName]="question.key" [id]="question.key">
+    </textarea>
+    </mat-form-field>
 
-    <select [id]="question.key" *ngSwitchCase="'dropdown'" [formControlName]="question.key">
-      <option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>
-    </select>
+    <!-- inputNumber -->
+    <mat-form-field *ngSwitchCase="'input'">
+      <input matInput class="um-full-width" placeholder="{{question.label}}"    [type]="question.type" [formControlName]="question.key" [id]="question.key">
+    </mat-form-field>
 
-  </div> 
+    <!-- dropdown -->
+    <mat-form-field *ngSwitchCase="'dropdown'">
+      <input matInput placeholder="{{question.label}}" [matAutocomplete]="auto" [type]="question.type" [formControlName]="question.key" [id]="question.key">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let opt of question.options" [value]="opt.key">
+          {{ opt.value }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
 
-  <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div>
+    <!-- radio -->
+    <mat-radio-group class="um-radio-group" *ngSwitchCase="'radio'" [formControlName]="question.key" [id]="question.key" [(ngModel)]="question.label">
+      <mat-radio-button class="um-radio-button" *ngFor="let opt of question.options" [value]="opt.key">
+        {{opt.value}}
+      </mat-radio-button>
+    </mat-radio-group>
+
+  </div>
+  {{question.id}}
+  <!-- <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div> -->
 </div>

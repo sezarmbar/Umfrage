@@ -1,7 +1,10 @@
 import { Injectable, OnInit }       from '@angular/core';
 
 import { DropdownQuestion } from '../components/question-dropdown';
+import { GetId } from './idGenerator';
+import { InputQuestion } from '../components/question-input';
 import { QuestionBase } from '../module/question-base';
+import { RadioQuestion } from '../components/question-radio';
 import { TextboxQuestion } from '../components/question-textbox';
 
 @Injectable()
@@ -11,12 +14,10 @@ export class QuestionService {
   // Todo: make asynchronous
   addQuestions(question) {
    this.questions.push(question)
-   console.log(this.questions)
    }
 
   
   getQuestions() {
-    console.log(this.questions)
     return this.questions.sort((a, b) => a.order - b.order);
 
   }
@@ -26,40 +27,44 @@ export class QuestionService {
       new DropdownQuestion({
         key: 'brave',
         label: 'Bravery Rating',
+        type:'string',
         options: [
           {key: 'solid',  value: 'Solid'},
           {key: 'great',  value: 'Great'},
           {key: 'good',   value: 'Good'},
           {key: 'unproven', value: 'Unproven'}
         ],
+        required: true,
         order: 3
       }),
-      // new DropdownQuestion({
-      //   key: 'type',
-      //   label: 'Answer type',
-      //   options: [
-      //     {key: 'solid',  value: 'Solid'},
-      //     {key: 'great',  value: 'Great'},
-      //     {key: 'good',   value: 'Good'},
-      //     {key: 'unproven', value: 'Unproven'}
-      //   ],
-      //   order: 3
-      // }),
+      new RadioQuestion({
+        key: 'radio',
+        label: 'radio sample',
+        options: [
+          {key: 'solid',  value: 'Solid'},
+          {key: 'great',  value: 'Great'},
+          {key: 'good',   value: 'Good'},
+          {key: 'unproven', value: 'Unproven'}
+        ],
+        order: 4
+      }),
   
       new TextboxQuestion({
+        type:'number',
         key: 'firstName',
         label: 'First name',
         value: 'Bombasto',
         required: true,
         order: 1
-      })
-  
-      // new TextboxQuestion({
-      //   key: 'emailAddress',
-      //   label: 'Email',
-      //   type: 'email',
-      //   order: 2
-      // })
+      }),
+      new InputQuestion({
+        type:'email',
+        key: 'Numbe_of',
+        label: 'email',
+        required: true,
+        order: 5
+      } )
+
     ];
     
   }
