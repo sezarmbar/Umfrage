@@ -26,7 +26,7 @@ export class QuestionBase<T>{
     this.type = options.type || '';
     this.id = this.idGenerate(this.label+this.key)    
   }
-  //TODO 
+  //TODO fix hashig
   idGenerate(name){
     let d = new Date();
     let hash = 0;
