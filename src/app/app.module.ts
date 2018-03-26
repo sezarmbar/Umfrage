@@ -7,12 +7,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { ApppMaterialModule } from './material/app-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
-import { DynamicFormQuestionComponent } from './components/dynamic-form-question.component';
+import { DynamicFormComponent } from './dynamicForm/dynamic-form/dynamic-form.component';
+import { DynamicFormQuestionComponent } from './dynamicForm/components/dynamic-form-question.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
-import { QuestionControlService } from './services/question-control.service';
-import { QuestionService } from './services/question.service';
+import { QuestionControlService } from './dynamicForm/services/question-control.service';
+import { QuestionService } from './dynamicForm/services/question.service';
 import { UmfrageComponent } from './pages/umfrage/umfrage.component';
 
 @NgModule({

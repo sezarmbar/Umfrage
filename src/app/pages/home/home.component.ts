@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FormControl } from '@angular/forms';
-import { QuestionService } from '../../services/question.service';
-import { TextboxQuestion } from '../../components/question-textbox';
+import { QuestionService } from '../../dynamicForm/services/question.service';
+import { TextboxQuestion } from '../../dynamicForm/components/question-textbox';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +10,7 @@ import { TextboxQuestion } from '../../components/question-textbox';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  mahmou:String= '1930023545 Mahmoud Barakat'
   textboxQuestion: TextboxQuestion = new TextboxQuestion({
     key: 'emailAddress',
     label: 'Email',
@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
 
   addQuastion() {
     this.qcs.addQuestions(this.textboxQuestion)
+    console.log(this.mahmou.length)
   }
 
 

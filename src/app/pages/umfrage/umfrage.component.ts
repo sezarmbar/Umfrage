@@ -1,11 +1,11 @@
 import { Component }  from '@angular/core';
-import { QuestionService } from '../../services/question.service';
+import { QuestionService } from '../../dynamicForm/services/question.service';
 
 @Component({
   selector: 'app-umfrage',
   templateUrl: './umfrage.component.html',
-  styleUrls: ['./umfrage.component.scss'],
-  providers:  [QuestionService]
+  styleUrls: ['./umfrage.component.scss']
+  
 })
 export class UmfrageComponent {
   questions: any[];

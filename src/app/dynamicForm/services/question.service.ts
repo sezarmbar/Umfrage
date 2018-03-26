@@ -1,8 +1,8 @@
 import { Injectable, OnInit }       from '@angular/core';
 
-import { DropdownQuestion } from '../dynamicForm/components/question-dropdown';
+import { DropdownQuestion } from '../components/question-dropdown';
 import { QuestionBase } from '../module/question-base';
-import { TextboxQuestion } from '../dynamicForm/components/question-textbox';
+import { TextboxQuestion } from '../components/question-textbox';
 
 @Injectable()
 export class QuestionService {
