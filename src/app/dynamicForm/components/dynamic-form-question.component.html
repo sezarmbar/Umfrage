@@ -11,19 +11,20 @@
 
     <!-- input -->
     <mat-form-field *ngSwitchCase="'input'">
-      <input matInput    placeholder="{{question.label}}"    [type]="question.type" [formControlName]="question.key" [id]="question.key">
+      <input matInput placeholder="{{question.label}}" [type]="question.type" [formControlName]="question.key" [id]="question.key">
     </mat-form-field>
 
     <!-- DatePicker -->
     <mat-form-field *ngSwitchCase="'datePicker'">
-      <input matInput [matDatepicker]="picker" placeholder="Choose a date"  [type]="date" [formControlName]="question.key" [id]="question.key">
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date" [type]="date" [formControlName]="question.key" [id]="question.key">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
     <!-- dropdown -->
     <mat-form-field *ngSwitchCase="'dropdown'">
-      <input matInput placeholder="{{question.label}}" [matAutocomplete]="auto" [type]="question.type" [formControlName]="question.key" [id]="question.key">
+      <input matInput placeholder="{{question.label}}" [matAutocomplete]="auto" [type]="question.type" [formControlName]="question.key"
+        [id]="question.key">
       <mat-autocomplete #auto="matAutocomplete">
         <mat-option *ngFor="let opt of question.options" [value]="opt.key">
           {{ opt.value }}
@@ -38,7 +39,12 @@
       </mat-radio-button>
     </mat-radio-group>
 
+    <!-- checkboxe -->
+
+    <span *ngSwitchCase="'checkboxe'">
+      <mat-checkbox [formControlName]="question.key" [id]="question.key" type="checkbox" [value]="question.value">{{question.key}}</mat-checkbox>
+    </span>
+
   </div>
-  {{question.id}}
   <!-- <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div> -->
 </div>
