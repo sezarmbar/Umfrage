@@ -15,6 +15,7 @@ import {
   MatInputModule,
   MatListModule,
   MatMenuModule,
+  MatNativeDateModule,
   MatPaginatorModule,
   MatProgressBarModule,
   MatProgressSpinnerModule,
@@ -68,7 +69,8 @@ import {NgModule} from '@angular/core';
     MatTableModule,
     MatTabsModule,
     MatToolbarModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatNativeDateModule
   ]
 })
 export class ApppMaterialModule { }

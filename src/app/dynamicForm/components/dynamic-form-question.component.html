@@ -5,13 +5,20 @@
 
     <!-- textbox -->
     <mat-form-field *ngSwitchCase="'textbox'">
-      <textarea matInput class="um-full-width" placeholder="{{question.label}}" [type]="question.type" [formControlName]="question.key" [id]="question.key">
+      <textarea matInput placeholder="{{question.label}}" [type]="question.type" [formControlName]="question.key" [id]="question.key">
     </textarea>
     </mat-form-field>
 
-    <!-- inputNumber -->
+    <!-- input -->
     <mat-form-field *ngSwitchCase="'input'">
-      <input matInput class="um-full-width" placeholder="{{question.label}}"    [type]="question.type" [formControlName]="question.key" [id]="question.key">
+      <input matInput    placeholder="{{question.label}}"    [type]="question.type" [formControlName]="question.key" [id]="question.key">
+    </mat-form-field>
+
+    <!-- DatePicker -->
+    <mat-form-field *ngSwitchCase="'datePicker'">
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date"  [type]="date" [formControlName]="question.key" [id]="question.key">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
     <!-- dropdown -->

@@ -24,20 +24,18 @@ export class QuestionBase<T>{
     this.order = options.order === undefined ? 1 : options.order;
     this.controlType = options.controlType || '';
     this.type = options.type || '';
-    this.id = this.idGenerate(this.label+this.key)    
+    this.id = this.idGenerate(this.label+this.key)   
   }
   //TODO fix hashig
-  idGenerate(name){
+  idGenerate(name) {
     let d = new Date();
     let hash = 0;
     if (name.length == 0) return hash;
     for (let i = 0; i < name.length; i++) {
       const char = name.charCodeAt(i);
-      hash = ((hash<<5)-hash)+char;
+      hash = ((hash << 5) - hash) + char;
       hash = hash & hash; // Convert to 32bit integer
     }
-    console.log(hash)
-    return hash+d.valueOf();
+    return d.valueOf()+hash;
   }
 }
-

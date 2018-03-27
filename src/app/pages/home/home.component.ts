@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FormControl } from '@angular/forms';
+import { InputQuestion } from '../../dynamicForm/components/question-input';
 import { QuestionService } from '../../dynamicForm/services/question.service';
 import { TextboxQuestion } from '../../dynamicForm/components/question-textbox';
 
@@ -10,22 +11,27 @@ import { TextboxQuestion } from '../../dynamicForm/components/question-textbox';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  textboxQuestion: TextboxQuestion = new TextboxQuestion({
-    key: 'emailAddress',
-    label: 'Email',
-    type: 'email',
-    order: 2
-  })
 
-
+  textboxQuestion: TextboxQuestion
+  str:string;
+  
   public ngOnInit() { }
   myControl: FormControl = new FormControl();
   constructor(private qcs: QuestionService) { }
 
   addQuastion() {
-    this.qcs.addQuestions(this.textboxQuestion)
+    this.qcs.addQuestions(this.getUmfrage())
   }
 
+  getUmfrage():InputQuestion{
+    const textboxQuestion =  new InputQuestion({
+      key: this.str,
+      label: this.str,
+      type: 'email',
+      order: 2
+    })
+    return textboxQuestion;
+  }
 
   options = [
     'One',

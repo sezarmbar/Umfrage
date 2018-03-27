@@ -1,7 +1,7 @@
 import { Injectable, OnInit }       from '@angular/core';
 
+import { DatePicker } from '../components/question-datePpicker';
 import { DropdownQuestion } from '../components/question-dropdown';
-import { GetId } from './idGenerator';
 import { InputQuestion } from '../components/question-input';
 import { QuestionBase } from '../module/question-base';
 import { RadioQuestion } from '../components/question-radio';
@@ -35,7 +35,7 @@ export class QuestionService {
           {key: 'unproven', value: 'Unproven'}
         ],
         required: true,
-        order: 3
+        // order: 1
       }),
       new RadioQuestion({
         key: 'radio',
@@ -46,7 +46,7 @@ export class QuestionService {
           {key: 'good',   value: 'Good'},
           {key: 'unproven', value: 'Unproven'}
         ],
-        order: 4
+        // order:2
       }),
   
       new TextboxQuestion({
@@ -55,14 +55,14 @@ export class QuestionService {
         label: 'First name',
         value: 'Bombasto',
         required: true,
-        order: 1
+        // order: 3
       }),
-      new InputQuestion({
-        type:'email',
-        key: 'Numbe_of',
-        label: 'email',
+      new DatePicker({
+        type:'date',
+        key: 'DatePicker',
+        label: 'Date Picker',
         required: true,
-        order: 5
+        // order: 4
       } )
 
     ];
