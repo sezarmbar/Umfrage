@@ -1,6 +1,7 @@
 import 'hammerjs';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { WClockComponent, WMatTimePickerComponent, WTimeDialogComponent } from './components/index';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +23,9 @@ import { UmfrageComponent } from './pages/umfrage/umfrage.component';
     UmfrageComponent,
     DynamicFormQuestionComponent,
     DynamicFormComponent,
+    WMatTimePickerComponent,
+    WTimeDialogComponent,
+    WClockComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +35,7 @@ import { UmfrageComponent } from './pages/umfrage/umfrage.component';
     AppRoutingModule
   ],
   providers: [QuestionControlService, QuestionService],
+  entryComponents: [ WTimeDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
