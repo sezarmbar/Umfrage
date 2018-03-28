@@ -12,8 +12,5 @@ export class CheckBoxesComponent {
   @Input() question: QuestionBase<any>;
   @Input() form: FormGroup;
   get isValid() { return this.form.controls[this.question.key].valid; }
-  ngOnInit(){
-    console.log('this.question')
-    console.log(this.question.controlType)
-  }
+
 }

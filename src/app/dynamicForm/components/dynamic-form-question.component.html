@@ -33,22 +33,16 @@
     </mat-form-field>
 
     <!-- radio -->
-    <mat-radio-group class="um-radio-group" *ngSwitchCase="'radio'" [formControlName]="question.key" [id]="question.key" [(ngModel)]="question.label">
-      <mat-radio-button class="um-radio-button" *ngFor="let opt of question.options" [value]="opt.key">
+    <mat-radio-group *ngSwitchCase="'radio'" [formControlName]="question.key" [id]="question.key" [(ngModel)]="question.label">
+      <mat-radio-button *ngFor="let opt of question.options" [value]="opt.key">
         {{opt.value}}
       </mat-radio-button>
     </mat-radio-group>
 
     <!-- checkboxe -->
-
-    <!-- <span *ngSwitchCase="'checkboxe'">
-      <mat-checkbox [formControlName]="question.key" [id]="question.key" type="checkbox" [value]="question.value">{{question.key}}</mat-checkbox>
-    </span> -->
-
-    <!-- checkbox2  -->
     <span *ngSwitchCase="'checkbox'" >      
       {{question.options.length}}
-      <div *ngFor="let question of question.options" class="form-row">
+      <div *ngFor="let question of question.options" >
         <app-check-boxes [question]="question" [form]="form"></app-check-boxes>
       </div>
     </span>

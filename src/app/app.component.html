@@ -1,5 +1,39 @@
-<button mat-button routerLink="home">got</button>
+<mat-toolbar color="primary" >
+    My App
+    <span class="tolbar-spacer"></span>
+    <button mat-button routerLink="home">got</button>
+    <button mat-button routerLink="umfrage">Umfrage</button>
+    <button mat-button routerLink="umfrageBuilder">umfrageBuilder</button>
+</mat-toolbar>
 
 
-<button mat-button routerLink="umfrage">Umfrage</button>
+
+
+
+<!-- <mat-sidenav-container fullscreen>
+    <mat-sidenav mode="side" opened="false" #sidenav>
+      <mat-toolbar color="primary">AppLogo</mat-toolbar>
+    </mat-sidenav>
+    <div class="main-content"> -->
+      <!-- <mat-toolbar color="primary" layout="row">
+        <div flex layout="row" layout-align="start center">
+          <span><button mat-button><mat-icon>menu</mat-icon></button></span>
+          <span><h2>Application Name</h2></span>
+        </div>
+        <div flex layout="row" layout-align="center center">
+          <mat-input-container>
+            <input matInput placeholder="Search">
+          </mat-input-container>
+        </div>
+        <div id="right_nav" flex layout="row" layout-align="end center">
+          <span><button mat-button><mat-icon>add</mat-icon> Create Project</button></span>
+          <span><button mat-button><mat-icon>help</mat-icon></button></span>
+          <span><button mat-button><mat-icon>alarm</mat-icon></button></span>
+          <span><button mat-button><mat-icon>face</mat-icon></button></span>
+        </div>
+      </mat-toolbar> -->
+    <!-- </div>
+  </mat-sidenav-container> -->
+
 <router-outlet></router-outlet>
+  

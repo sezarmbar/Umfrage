@@ -49,56 +49,56 @@ export class QuestionService {
     })
 
     this.questions = [
-      ch1, ch2, chMain1, chMain2
+      ch1, ch2, chMain1, chMain2,
 
 
 
-      // new DatePicker({
-      //   type: 'date',
-      //   key: 'DatePicker',
-      //   label: 'Date Picker',
-      //   required: true,
-      //   // order: 4
-      // }),
-      // new DropdownQuestion({
-      //   key: 'brave',
-      //   label: 'Bravery Rating',
-      //   type: 'string',
-      //   options: [
-      //     { key: 'solid', value: 'Solid' },
-      //     { key: 'great', value: 'Great' },
-      //     { key: 'good', value: 'Good' },
-      //     { key: 'unproven', value: 'Unproven' }
-      //   ],
-      //   required: true,
-      //   // order: 1
-      // }),
-      // new InputQuestion({
-      //   key: 'inputQ',
-      //   label: 'inputQ inputQ',
-      //   type: 'string',
-      // }),
+      new DatePicker({
+        type: 'date',
+        key: 'DatePicker',
+        label: 'Date Picker',
+        required: true,
+        // order: 4
+      }),
+      new DropdownQuestion({
+        key: 'brave',
+        label: 'Bravery Rating',
+        type: 'string',
+        options: [
+          { key: 'solid', value: 'Solid' },
+          { key: 'great', value: 'Great' },
+          { key: 'good', value: 'Good' },
+          { key: 'unproven', value: 'Unproven' }
+        ],
+        required: true,
+        // order: 1
+      }),
+      new InputQuestion({
+        key: 'inputQ',
+        label: 'inputQ inputQ',
+        type: 'string',
+      }),
 
-      // new RadioQuestion({
-      //   key: 'radio',
-      //   label: 'radio sample',
-      //   options: [
-      //     { key: 'solid', value: 'Solid' },
-      //     { key: 'great', value: 'Great' },
-      //     { key: 'good', value: 'Good' },
-      //     { key: 'unproven', value: 'Unproven' }
-      //   ],
-      //   // order:2
-      // }),
+      new RadioQuestion({
+        key: 'radio',
+        label: 'radio sample',
+        options: [
+          { key: 'solid', value: 'Solid' },
+          { key: 'great', value: 'Great' },
+          { key: 'good', value: 'Good' },
+          { key: 'unproven', value: 'Unproven' }
+        ],
+        // order:2
+      }),
 
-      // new TextboxQuestion({
-      //   type: 'number',
-      //   key: 'firstName',
-      //   label: 'First name',
-      //   value: 'Bombasto',
-      //   required: true,
-      //   // order: 3
-      // }),
+      new TextboxQuestion({
+        type: 'number',
+        key: 'firstName',
+        label: 'First name',
+        value: 'Bombasto',
+        required: true,
+        // order: 3
+      }),
 
 
 

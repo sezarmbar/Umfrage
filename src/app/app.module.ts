@@ -16,6 +16,7 @@ import { QuestionControlService } from './dynamicForm/services/question-control.
 import { QuestionService } from './dynamicForm/services/question.service';
 import { UmfrageComponent } from './pages/umfrage/umfrage.component';
 import { CheckBoxesComponent } from './dynamicForm/components/check-boxes/check-boxes.component';
+import { UmfrageBuilderComponent } from './pages/umfrage-builder/umfrage-builder.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CheckBoxesComponent } from './dynamicForm/components/check-boxes/check-
     WMatTimePickerComponent,
     WTimeDialogComponent,
     WClockComponent,
-    CheckBoxesComponent
+    CheckBoxesComponent,
+    UmfrageBuilderComponent
   ],
   imports: [
     BrowserModule,
