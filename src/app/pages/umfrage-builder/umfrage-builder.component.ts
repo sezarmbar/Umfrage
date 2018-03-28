@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./umfrage-builder.component.scss']
 })
 export class UmfrageBuilderComponent implements OnInit {
-
+  panelOpenState: boolean = false;
   constructor() { }
 
   ngOnInit() {
