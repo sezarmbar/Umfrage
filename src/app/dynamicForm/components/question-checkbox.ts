@@ -1,8 +1,15 @@
 import { QuestionBase } from "../module/question-base";
 
+export class CheckboxeElement extends QuestionBase<string>{
+  controlType = 'checkboxSub';
+
+  constructor(options: {} = {}) {
+    super(options);
+  }
+}
 export class CheckboxeQuestion extends QuestionBase<string> {
   controlType = 'checkbox';
-  options: {key: string, value: string}[] = [];
+  options:CheckboxeElement[] = [];
 
   constructor(options: {} = {}) {
     super(options);

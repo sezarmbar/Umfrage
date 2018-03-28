@@ -41,9 +41,14 @@
 
     <!-- checkboxe -->
 
-    <span *ngSwitchCase="'checkboxe'">
+    <!-- <span *ngSwitchCase="'checkboxe'">
       <mat-checkbox [formControlName]="question.key" [id]="question.key" type="checkbox" [value]="question.value">{{question.key}}</mat-checkbox>
-    </span>
+    </span> -->
+
+    <!-- checkbox2  -->
+    <div *ngFor="let question of question.options" class="form-row">
+      <app-check-boxes [question]="question" [form]="form"></app-check-boxes>
+    </div>
 
   </div>
   <!-- <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div> -->
