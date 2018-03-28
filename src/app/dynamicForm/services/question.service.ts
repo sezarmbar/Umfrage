@@ -24,27 +24,32 @@ export class QuestionService {
   }
 
   simpleQuastions() {
-    const ch1 =  new CheckboxeElement({
+    const ch1 = new CheckboxeElement({
       type: 'mmm',
       key: 'mmm',
       label: 'mmm',
     })
-    const ch2 =  new CheckboxeElement({
+    const ch2 = new CheckboxeElement({
       type: 'lll',
       key: 'lll',
       label: 'lll',
     })
+
+    const chMain1 = new CheckboxeQuestion({
+      type: 'chMain1',
+      key: 'chMain1',
+      label: 'chMain1',
+      options: [ch2]
+    })
+    const chMain2 = new CheckboxeQuestion({
+      type: 'chMain2',
+      key: 'chMain2',
+      label: 'chMain2',
+      options: [ch1]
+    })
+
     this.questions = [
-      ch1,ch2,
-      new CheckboxeQuestion({
-        type: 'checkbox1',
-        key: 'checkbox2',
-        label: 'checkbox3',
-        options: [
-         ch1, 
-          ch2
-        ],
-      }),
+      ch1, ch2, chMain1, chMain2
 
 
 
